@@ -1,0 +1,32 @@
+@use "sass:list";
+@use "sass:math";
+
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+    @return math.div($value, ($value * 0 + 1));
+}
+
+@function rem($pxValue) {
+    @return math.div(stripUnit($pxValue), stripUnit($html-font-size)) * 1rem;
+}  
+
+@mixin for-phone-landscape-up {
+    @media (min-width: 460px) { @content; }
+  }
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 685px) { @content; }
+}
+
+@mixin for-tablet-down {
+    @media (max-width: 959px) { @content; }
+}
+
+@mixin for-tablet-up {
+    @media (min-width: 960px) { @content; }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
