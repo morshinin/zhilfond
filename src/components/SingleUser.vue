@@ -73,7 +73,7 @@ const singleUser = computed(() => {
         gap: rem(10);
     }
 
-    @include for-tablet-up {
+    @include for-desktop-up {
         display: grid;
         grid-template-columns: rem(425) auto;
         gap: rem(60);
